@@ -1,0 +1,12 @@
+#cmd for ip fragmentation to check port 80
+$sudo nmap -sS -f scanme.nmap.org -p 80
+
+#cmd to do decoy scan -D for including the spoof ip 45 and 100 and original source ip seperated by comma and -e for ethernet adapter and then target ip
+$sudo nmap -sS -p80 -D 45.45.45.45,100.100.100.100,192.168.4.23 -e en0 scanme.nmap.org
+
+#cmd to scan using ip spoofing -S for the ip we use as source ip and -e for the ethernet adapter we are using and then the target ip  
+$sudo nmap -sS -p80 -S 192.168.4.200 -e en0 scanme.nmap.org
+
+#cmd to use 20 random decoy addresses and also include original source ip in there
+$sudo nmap -sS -p80 -D RND:20 -e en0 scanme.nmap.org
+

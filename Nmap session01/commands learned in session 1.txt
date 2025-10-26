@@ -1,0 +1,17 @@
+commands learned in session1:
+
+#to scan http,https
+$sudo nmap -sS -p 80,443 webscantest.com
+
+#to scan nmap site (free scanning)
+$nmap scan.nmap.org
+
+#to check nmap version
+$nmap -version
+
+#to install nmap in linux
+$sudo apt-get install nmap
+
+#to check nmap options
+$nmap -h
+

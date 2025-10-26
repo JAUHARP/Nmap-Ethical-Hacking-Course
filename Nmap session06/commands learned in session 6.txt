@@ -1,0 +1,14 @@
+# cmd for os fingerprinting scan with verbosity
+$sudo nmap -O 10.211.55.5 -v
+
+#cmd tcp portscan status and os version scanning
+$sudo nmap -sV scanme.nmap.org
+
+#cmd to check what is inside a file
+$cat scanme.txt
+
+#cmd to scan nmap ports with verbosity and save results to a file
+$sudo nmap -sV scanme.nmap.org -oN scanme.txt
+
+#cmd version scanning with verbosity
+$sudo nmap -sV scanme.nmap.org -v

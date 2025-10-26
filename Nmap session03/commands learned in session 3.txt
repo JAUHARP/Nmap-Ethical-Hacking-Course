@@ -1,0 +1,32 @@
+#to view the options to scan in nmap
+$nmap -h
+
+#sample of scanning range of ip
+$nmap 192.168.4.1-10
+
+#sample of scanning two seperate networks
+$nmap 10.211.55.0/24 192.168.4.0/24
+
+#to scan http https in a ip
+$nmap -p80,443 192.168.1.1
+
+#to scan top 100 ports
+$nmap -p1-100 192.168.1.1
+
+#-sU to perform udp scan
+$sudo nmap -p80,443 -sU 192.168.4.1
+
+#OS,version,Trace
+$nmap -A 192.168.1.1
+
+#ping scan
+$nmap -sn 192.168.1.0/24
+
+#to scan top 20 ports
+$nmap --top-ports 20 192.168.1.1
+
+#to get os,device model,device type etc.... 
+$sudo nmap -O 172.20.10.15
+
+#
+

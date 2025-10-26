@@ -1,0 +1,219 @@
+nmap session 1
+============================================================================
+commands learned in session1:
+
+#to scan http,https
+$sudo nmap -sS -p 80,443 webscantest.com
+
+#to scan nmap site (free scanning)
+$nmap scan.nmap.org
+
+#to check nmap version
+$nmap -version
+
+#to install nmap in linux
+$sudo apt-get install nmap
+
+#to check nmap options
+$nmap -h
+
+============================================================================
+nmap session 3
+
+
+#to view the options to scan in nmap
+$nmap -h
+
+#sample of scanning range of ip
+$nmap 192.168.4.1-10
+
+#sample of scanning two seperate networks
+$nmap 10.211.55.0/24 192.168.4.0/24
+
+#to scan http https in a ip
+$nmap -p80,443 192.168.1.1
+
+#to scan top 100 ports
+$nmap -p1-100 192.168.1.1
+
+#-sU to perform udp scan
+$sudo nmap -p80,443 -sU 192.168.4.1
+
+#OS,version,Trace
+$nmap -A 192.168.1.1
+
+#ping scan
+$nmap -sn 192.168.1.0/24
+
+#to scan top 20 ports
+$nmap --top-ports 20 192.168.1.1
+
+#to get os,device model,device type etc.... 
+$sudo nmap -O 172.20.10.15
+
+
+
+============================================================================nmap session 4
+
+
+#ping scan command to check how many hosts are up OR which devices are connected to a network
+$nmap -sn 192.168.1.0/24
+
+#command to check first 20 ip's in network
+$nmap -sn 192.168.4.1-20
+
+============================================================================
+nmap session 5
+
+
+#to perform Ack scan 
+$sudo nmap -sA scanme.nmap.org
+
+# cmd for connect scan
+$nmap -sT scanme.nmap.org
+
+#cmd to scan top 1000 ports by default
+$sudo nmap -sT scanme.nmap.org
+
+#cmd for tcp null scan
+$sudo nmap -sN scanme.nmap.org
+
+#cmd to scan connect top 100 ports
+$sudo nmap -sT scanme.nmap.org -F
+
+#cmd udp scan with specified ports
+$sudo nmap -sU -p19,53,123 scanme.nmap.org
+
+#cmd for tcp xmas scan
+sudo nmap -sX scanme.nmap.org
+
+============================================================================
+nmap session 6
+
+
+# cmd for os fingerprinting scan with verbosity
+$sudo nmap -O 10.211.55.5 -v
+
+#cmd tcp portscan status and os version scanning
+$sudo nmap -sV scanme.nmap.org
+
+#cmd to check what is inside a file
+$cat scanme.txt
+
+#cmd to scan nmap ports with verbosity and save results to a file
+$sudo nmap -sV scanme.nmap.org -oN scanme.txt
+
+#cmd version scanning with verbosity
+$sudo nmap -sV scanme.nmap.org -v
+
+
+============================================================================
+nmap session 7
+
+
+#cmd to get scan faster or in T2
+$nmap scanme.nmap.org -T2
+
+#cmd to scan fast or in t5
+$nmap scanme.nmap.org -T5
+
+============================================================================
+nmap session 8
+
+#cmd nmap to scan a specific nmap script
+$nmap --script "http-auth" scanme.nmap.org
+
+#cmd nmap to scan script
+$nmap -sC scanme.nmap.org
+
+#cmd to enter into a http script
+$cat http-auth.nse
+
+#cmd to enter into script file
+$cd /usr/share/nmap/scripts
+
+#cmd to scan default scripts in the device
+$nmap --script=default scanme.nmap.org
+
+#cmd to scan http methods
+$nmap --script "http-methods" scanme.nmap.org
+
+#cmd to scan http scripts
+$ls | grep -e "http"
+
+#cmd to scan nse banners
+$nmap --script "banner" scanme.nmap.org
+
+#cmd to update nmap scripts
+$nmap --script-updatedb
+
+
+============================================================================
+nmap session 9
+
+#cmd to run nse script for bruteforce login password of ftp using nse script
+$nmap --script "ftp-brute" 192.168.56.101 -p 21
+
+#cmd to check vulnerability of a server or ip
+$nmap -sV --script "vulners" 192.168.4.104
+
+#cmd to check which ports are open in metasploit
+$nmap 192.168.208.149
+
+#cmd to get banner of all services
+$nmap --script "banner" 192.168.56.101
+
+#cmd to get nse scripts of ftp
+$ls | grep -e ftp
+
+#cmd to run ftp nse script on metasploit
+$nmap --script "ftp-anon" 192.168.56.101
+
+#cmd to run smb nse scripts
+$nmap --scripts "smb-enum-users" 192.168.56.101
+
+#cmd to run ssl nse scripts
+$nmap --script "ssl-enum-ciphers" nmap.org -p 443
+
+#cmd to specify ftp port on nse script nmap scan
+$nmap --script "ftp-anon" 192.168.56.101 -p 21
+
+#cmd to use http nse script in metasploit ip
+$nmap --script "http-enum" 192.168.56.101
+
+#cmd to view smb nse script
+$ls | grep -e smb
+
+#cmd to view ssl nse script
+$ls | grep -e ssl
+
+#cmd to view versions of service running in an ip
+$nmap -sV 192.168.56.101
+
+#default metasploitable
+login:msfadmin
+password:msfadmin
+
+
+#cmd to check metasploitable is running in which ip
+$nmap -sn 192.168.56.0/24
+
+
+============================================================================
+nmap session 10
+
+
+#cmd for ip fragmentation to check port 80
+$sudo nmap -sS -f scanme.nmap.org -p 80
+
+#cmd to do decoy scan -D for including the spoof ip 45 and 100 and original source ip seperated by comma and -e for ethernet adapter and then target ip
+$sudo nmap -sS -p80 -D 45.45.45.45,100.100.100.100,192.168.4.23 -e en0 scanme.nmap.org
+
+#cmd to scan using ip spoofing -S for the ip we use as source ip and -e for the ethernet adapter we are using and then the target ip  
+$sudo nmap -sS -p80 -S 192.168.4.200 -e en0 scanme.nmap.org
+
+#cmd to use 20 random decoy addresses and also include original source ip in there
+$sudo nmap -sS -p80 -D RND:20 -e en0 scanme.nmap.org
+
+============================================================================
+

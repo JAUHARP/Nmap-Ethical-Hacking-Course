@@ -1,0 +1,5 @@
+#cmd to get scan faster or in T2
+$nmap scanme.nmap.org -T2
+
+#cmd to scan fast or in t5
+$nmap scanme.nmap.org -T5

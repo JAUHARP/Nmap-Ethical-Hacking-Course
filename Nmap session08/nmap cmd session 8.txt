@@ -1,0 +1,26 @@
+#cmd nmap to scan a specific nmap script
+$nmap --script "http-auth" scanme.nmap.org
+
+#cmd nmap to scan script
+$nmap -sC scanme.nmap.org
+
+#cmd to enter into a http script
+$cat http-auth.nse
+
+#cmd to enter into script file
+$cd /usr/share/nmap/scripts
+
+#cmd to scan default scripts in the device
+$nmap --script=default scanme.nmap.org
+
+#cmd to scan http methods
+$nmap --script "http-methods" scanme.nmap.org
+
+#cmd to scan http scripts
+$ls | grep -e "http"
+
+#cmd to scan nse banners
+$nmap --script "banner" scanme.nmap.org
+
+#cmd to update nmap scripts
+$nmap --script-updatedb

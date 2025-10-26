@@ -1,0 +1,47 @@
+#cmd to run nse script for bruteforce login password of ftp using nse script
+$nmap --script "ftp-brute" 192.168.56.101 -p 21
+
+#cmd to check vulnerability of a server or ip
+$nmap -sV --script "vulners" 192.168.4.104
+
+#cmd to check which ports are open in metasploit
+$nmap 192.168.208.149
+
+#cmd to get banner of all services
+$nmap --script "banner" 192.168.56.101
+
+#cmd to get nse scripts of ftp
+$ls | grep -e ftp
+
+#cmd to run ftp nse script on metasploit
+$nmap --script "ftp-anon" 192.168.56.101
+
+#cmd to run smb nse scripts
+$nmap --scripts "smb-enum-users" 192.168.56.101
+
+#cmd to run ssl nse scripts
+$nmap --script "ssl-enum-ciphers" nmap.org -p 443
+
+#cmd to specify ftp port on nse script nmap scan
+$nmap --script "ftp-anon" 192.168.56.101 -p 21
+
+#cmd to use http nse script in metasploit ip
+$nmap --script "http-enum" 192.168.56.101
+
+#cmd to view smb nse script
+$ls | grep -e smb
+
+#cmd to view ssl nse script
+$ls | grep -e ssl
+
+#cmd to view versions of service running in an ip
+$nmap -sV 192.168.56.101
+
+#default metasploitable
+login:msfadmin
+password:msfadmin
+
+
+#cmd to check metasploitable is running in which ip
+$nmap -sn 192.168.56.0/24
+
